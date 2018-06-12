@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects In a School</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="objects.js"></script>
+    <script src="data.js"></script>
+    <script src="actions.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+
+
+</head>
+<body onload="generateStudentList(); generateTeacherList(); generateSubjList()">
+
+<h1>School Management </h1>
+
+    <h2 id="stud">Add Students</h2>
+
+    <table >
+        <tr>
+            <td>First Name:</td>
+            <td>Last Name:</td>
+            <td>Grade:</td>
+        </tr>
+        <tr>
+            <td><input type="text" id="sfn" value="" size="22"></td>
+            <td><input type="text" id="sln" value="" size="22"></td>
+            <td><input type="text" id="grd" value="" size="22"></td>
+        </tr>
+
+    </table>
+<div id="response"></div>
+
+<button class="btn btn-default" id ="studbutton" onclick="createStudent();">Add student</button>
+
+
+    <h2 id="teach"> Add Teachers</h2>
+        <table>
+            <tr>
+                <td>First Name:</td>
+                <td>Last Name:</td>
+                <td>Subject:</td>
+            </tr>
+        <tr>
+            <td><input type="text" id="tfn" value="" size="22"></td>
+            <td><input type="text" id="tln" value="" size="22"></td>
+            <td><input type="text" id="tsub" value="" size="22"></td>
+
+        </tr>
+        </table>
+<div id="response2"></div>
+        <button class="btn btn-default" id ="teachbutton" onclick="createTeacher();">Add teacher</button>
+<div id="teacherList"></div>
+
+<h2 id="subj"> Add Subjects</h2>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>Max Size:</td>
+            <td>Teacher:</td>
+        </tr>
+  <tr>
+      <td><input type="text" id="subn" value="" size="22"></td>
+      <td><input type="text" id="submax" value="" size="22"></td>
+      <td><select id="possibleTeachers"></select></td>
+  </tr>
+
+    </table>
+<div id="response3"></div>
+
+<button class="btn btn-default" id ="subbutton" onclick="createSubj();">Add subject</button>
+
+
+ <hr>
+
+<h2>List Items</h2>
+
+<select id=items>
+    <option value="0">Students</option>
+    <option value="1">Teachers</option>
+    <option value="2">Subjects</option>
+</select>
+<button class="btn btn-default" id="itembutton" onclick="listIt()">Show List</button>
+<br><br>
+<div id="listOutput"></div>
+
+<hr>
+
+<h2>Add Teachers and Students to Sections</h2>
+<select id="addS">
+    <option value="0">Choose Student</option>
+</select>
+<select id="studentsubj">
+    <option value="0">Choose Subject</option>
+</select>
+<button class="btn btn-default" id="addSbutton" onclick="addStudent()">Add Student to Class</button>
+<div id="studclass"></div>
+<br><br>
+<select id="addT">
+    <option value="0">Choose Teacher</option>
+</select>
+<select id="teachsubj">
+    <option value="0">Choose Subject</option>
+</select>
+<button class="btn btn-default" id="addTbutton" onclick="addTeacher()">Add Teacher to Class</button>
+<div id="teachclass"></div>
+<hr>
+
+<h2>List Students in a Subject</h2>
+<select id="studsect">
+<option value="0">Choose Subject</option>
+</select>
+<button class="btn btn-default" id="studentsect" onclick="listStudentsInSection()">Show Students</button>
+<br><br>
+<div id="listed"></div>
+<br><br>
+
+
+</body>
+</html>
